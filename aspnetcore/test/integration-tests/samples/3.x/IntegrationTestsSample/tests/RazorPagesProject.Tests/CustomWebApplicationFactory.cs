@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RazorPagesProject.Data;
 
@@ -26,7 +27,8 @@ namespace RazorPagesProject.Tests
                 services.AddDbContext<ApplicationDbContext>((options, context) => 
                 {
                     context.UseInMemoryDatabase("InMemoryDbForTesting");
-                    //options.UseInternalServiceProvider(serviceProvider);
+                    options.UseInternalServiceProvider(serviceProvider);
+                    options.EnableServiceProviderCaching(false);
                 });
 
                 // Build the service provider.
