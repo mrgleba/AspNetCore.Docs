@@ -26,7 +26,7 @@ namespace RazorPagesProject.Tests
                 services.AddDbContext<ApplicationDbContext>((options, context) => 
                 {
                     context.UseInMemoryDatabase("InMemoryDbForTesting");
-                    options.UseInternalServiceProvider(serviceProvider);
+                    //options.UseInternalServiceProvider(serviceProvider);
                 });
 
                 // Build the service provider.

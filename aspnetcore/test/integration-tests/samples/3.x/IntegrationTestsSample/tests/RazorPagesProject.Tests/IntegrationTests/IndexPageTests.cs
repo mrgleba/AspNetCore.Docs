@@ -96,7 +96,7 @@ namespace RazorPagesProject.Tests
             //Act
             var response = await client.SendAsync(
                 (IHtmlFormElement)content.QuerySelector("form[id='messages']"),
-                (IHtmlButtonElement)content.QuerySelector("button[id='deleteBtn1']"));
+                (IHtmlButtonElement)content.QuerySelector("button[id='deleteBtn4']"));
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, defaultPage.StatusCode);
